@@ -1,4 +1,5 @@
 const path= require("path");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     mode: process.env.NODE_ENV,
@@ -17,5 +18,8 @@ module.exports = {
                 options: { presets: ["@babel/preset-env", '@babel/preset-react'], },
             }}
         ]
-    }
+    },
+    plugins: [
+      new BundleAnalyzerPlugin()
+    ]
 };
